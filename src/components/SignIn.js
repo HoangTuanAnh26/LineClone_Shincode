@@ -10,7 +10,7 @@ function SignIn() {
   }
   return (
     <div>
-      <Button onClick={signInWithGoogle}>Sign In With Google</Button>
+      <Button onClick={signInWithGoogle}>グーグルでログインする</Button>
     </div>
   );
 }
