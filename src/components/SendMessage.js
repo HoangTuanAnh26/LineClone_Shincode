@@ -2,6 +2,7 @@ import { Input } from '@mui/material'
 import React from 'react'
 import { db, auth } from "../firebase.js";
 import firebase from "firebase/compat/app";
+import SendIcon from "@mui/icons-material/Send";
 
 function SendMessage() {
     const [message, setMessage] = React.useState('')
@@ -16,6 +17,7 @@ function SendMessage() {
             uid,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         })
+        setMessage('')
     }
 
     return (
@@ -30,11 +32,12 @@ function SendMessage() {
                             marginLeft: "5px",
                             marginBottom: "-3px",
                         }}
-                        placehoder="メッセージを入力"
+                        placeholder="メッセージを入力"
                         type="text"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                     />
+                    <SendIcon style={{ color: "#7AC2FF", marginLeft: "20px" }}/>
                 </div>
             </form>
         </div>
@@ -43,4 +46,3 @@ function SendMessage() {
 
 export default SendMessage
 
-// Dbに届かない

@@ -20,10 +20,10 @@ function Line() {
       {console.log(messages)}
       <SignOut />
       <div className="msgs">
-        {messages.map(({ id, text, photoERL, uid}) => (
+        {messages.map(({ id, text, photoURL, uid}) => (
           <div> 
-            <div ke={id}>
-              <img src={photoERL} alt="" />
+            <div key={id} className={`msg ${uid === auth.currentUser.uid ? "sent" : "received"}`}>
+              <img src={photoURL} alt="" />
               <p>{text}</p>
             </div>
           </div>
@@ -35,3 +35,5 @@ function Line() {
 }
 
 export default Line
+
+// icon　表示しません
